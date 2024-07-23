@@ -14,5 +14,5 @@ class ScrapedItem(Base):
 
 
 # crear la base de datos
-engine = create_engine('sqlite:///scraped_data.db')
+engine = create_engine('sqlite:///scraped_data.db', connect_args={'timeout': 15})
 Base.metadata.create_all(engine)
