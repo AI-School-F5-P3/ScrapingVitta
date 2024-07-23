@@ -5,7 +5,7 @@ Base = declarative_base()
 
 
 class ScrapedItem(Base):
-    __tablename__ = 'scaped_items'
+    __tablename__ = 'scraped_items'
 
     id = Column(Integer, primary_key=True)
     author = Column(String)

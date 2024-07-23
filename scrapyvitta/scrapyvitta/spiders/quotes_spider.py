@@ -26,7 +26,7 @@ class QuotesSpider(scrapy.Spider):
             session.commit()
             session.close()
 
-            yield{
+            yield {
                 'author': author,
                 'tags': tags,
                 'about': about
