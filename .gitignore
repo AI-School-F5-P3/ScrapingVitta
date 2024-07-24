@@ -7,7 +7,6 @@ ENV/
 env.bak/
 venv.bak/
 
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -18,3 +17,5 @@ __pycache__/
 # Ignorar los directorios __pycache__
 __pycache__/
 
+# ignora todos los archivos con extesion .log
+*.log
