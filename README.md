@@ -13,10 +13,10 @@ Antes de ejecutar la aplicación, asegúrate de tener instaladas las siguientes 
 Para ejecutar la aplicación de scraping, utiliza el siguiente comando en la terminal:
 
 * 1-
-  '''
+~~~
     scrapy crawl quotes
-  '''
+~~~
 * 2- En el directorio donde este app.py ejecutamos:
-  '''
+~~~
     streamlit run app.py
-  '''
+~~~
