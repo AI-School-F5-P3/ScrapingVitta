@@ -1,3 +1,5 @@
+import os
+import logging
 # Scrapy settings for scrapyvitta project
 #
 # For simplicity, this file contains only settings considered important or
@@ -91,3 +93,16 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+
+# Configuración del directorio de logs
+LOG_DIR = 'logs'
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+# Configuración de logs
+LOG_LEVEL = 'INFO'
+LOG_FILE = os.path.join(LOG_DIR, 'scraping.log')
+LOG_FORMAT = '%(levelname)s: %(message)s'
+LOG_DATEFORMAT = '%Y-%m-%d %H:%M:%S'
+LOG_STDOUT = True

@@ -1,11 +1,9 @@
-import logging
 import scrapy
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import OperationalError
 from ..models import ScrapedItem, engine
 import re
 from tenacity import retry, stop_after_attempt, wait_fixed
-from datetime import datetime
 
 Session = sessionmaker(bind=engine)
 
@@ -37,20 +35,6 @@ def commit_session(session):
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
     start_urls = ['https://quotes.toscrape.com/']
-
-    def __init__(self, *args, **kwargs):
-        super(QuotesSpider, self).__init__(*args, **kwargs)
-        # Configurar el logger
-        logger = logging.getLogger(self.name)
-        logger.setLevel(logging.INFO)
-        # Crear un manejador de archivo
-        fh = logging.FileHandler(f'quotes_spider_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log')
-        fh.setLevel(logging.INFO)
-        # Crar un formateador
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        fh.setFormatter(formatter)
-        # Añadir el manejador al logger
-        logger.addHandler(fh)
 
     def parse(self, response):
         self.logger.info(f"Scraping page: {response.url}")

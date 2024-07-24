@@ -1,6 +1,8 @@
 import streamlit as st
 import sqlite3
 import pandas as pd
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 
 # Función para conectar a la base de datos
@@ -37,8 +39,6 @@ st.bar_chart(author_counts)
 
 # Nube de palabras de las etiquetas
 st.header("Nube de Etiquetas")
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 
 
 all_tags = ' '.join(data['tags'].str.split(', ').sum())
@@ -53,7 +53,7 @@ st.pyplot(fig)
 
 # Búsqueda de citas
 st.header("Buscar Citas")
-search_term =st.text_input("Introduce un término de búsqueda:")
+search_term = st.text_input("Introduce un término de búsqueda:")
 if search_term:
     filtered_data = data[data['about'].str.contains(search_term, case=False)]
     st.write(f"Resultador encontrados: {len(filtered_data)}")
