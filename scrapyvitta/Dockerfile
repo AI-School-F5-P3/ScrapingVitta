@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
     
 # Copia los archivos de requisitos en el directorio de trabajo
 COPY requirements.txt .
+COPY app.py ./
+COPY scraped_data.db .
 
 # Instala las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
@@ -31,5 +33,5 @@ COPY . .
 EXPOSE 8000
 
 # Comando por defecto para ejecutar cuando el contenedor se inicie
-CMD ["scrapy", "crawl", "quotes"]
-#CMD ["streamlit", "run", "app.py"]
+#CMD ["scrapy", "crawl", "quotes"]
+CMD ["streamlit", "run", "app.py"]
