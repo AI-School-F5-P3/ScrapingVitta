@@ -36,4 +36,5 @@ Para ejecutar la aplicación de scraping, utiliza el siguiente comando en la ter
    ~~~
    docker run mi-aplicación-scrapy
    ~~~
-
+## Documentación del proyecto
+Notion: [Web_Scraping](https://tulip-barber-4e2.notion.site/Web-Scraping-877f968696cd4b7bbc014ec6813f8151?pvs=4)
