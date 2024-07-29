@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Exponer un puerto si tu aplicación lo requiere (no es necesario para Scrapy)
-EXPOSE 8000
+#EXPOSE 6800
 
 # Comando por defecto para ejecutar cuando el contenedor se inicie
 #CMD ["scrapy", "crawl", "quotes"]
